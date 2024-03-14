@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { H1 } from "../..";
+import { H1, P } from "../..";
 import { useProducts } from "../../../services/getInfinityProducts";
 import { ButtonMain, MainDashLayout } from "../../molecules";
+import { useProduct } from "../../../services/getProduct";
 
 const PageInfinity = () => {
+  const [selectedProdutId, setSelectedProdutId] = useState<number | null>(null);
   const { data, isFetchingNextPage, hasNextPage, fetchNextPage } =
     useProducts();
-
-  // const {} = useProduct();
-  const [selectedProdutId, setSelectedProdutId] = useState<string | null>(null);
+  const { data: selectedData } = useProduct(selectedProdutId);
   console.log(data);
   console.log();
   return (
@@ -16,7 +16,12 @@ const PageInfinity = () => {
       <H1 className="text-center">Infinity</H1>
       {data?.pages?.map((group) => {
         return group?.data.map((product: { name: string; id: number }) => (
-          <ButtonMain id={`${product.id}`}>{product.name}</ButtonMain>
+          <ButtonMain
+            id={`${product.id}`}
+            onClick={() => setSelectedProdutId(product.id)}
+          >
+            {product.name}
+          </ButtonMain>
         ));
       })}
       <ButtonMain
@@ -32,6 +37,7 @@ const PageInfinity = () => {
           ? "load more"
           : "nothing to load"}
       </ButtonMain>
+      <P>{JSON.stringify(selectedData)}</P>
     </MainDashLayout>
   );
 };
