@@ -1,8 +1,8 @@
-import { useTodos } from "../services/getTodos";
-import { useCreateTodo } from "../services/setTodos";
-import { Todo } from "../services/getTodo/type";
-import { useUpdateTodo } from "../services/updateTodo";
-import { useDeleteTodo } from "../services/deleteTodo";
+import { useTodos } from "../../../services/getTodos";
+import { useCreateTodo } from "../../../services/setTodos";
+import { Todo } from "../../../services/getTodo/type";
+import { useUpdateTodo } from "../../../services/updateTodo";
+import { useDeleteTodo } from "../../../services/deleteTodo";
 
 const Home = () => {
   const { data } = useTodos();
@@ -10,7 +10,6 @@ const Home = () => {
   const { mutate: deleteMutate } = useDeleteTodo();
   const { mutate: updateTodoMutate } = useUpdateTodo();
   //handel submit
-
   const updateTodo = (data: Todo) => {
     updateTodoMutate({ ...data, checked: !data.checked });
   };
