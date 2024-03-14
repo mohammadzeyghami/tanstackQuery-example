@@ -1,9 +1,9 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getProjects } from "./api";
 
-export const useGetProjects = (page: number) => {
+export const useGetProjects = ({ page }: { page: number }) => {
   return useQuery({
-    queryKey: ["Projects", { page }],
+    queryKey: ["projects", { page }],
     queryFn: () => getProjects({ page }),
     placeholderData: keepPreviousData,
   });
