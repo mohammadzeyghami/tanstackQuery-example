@@ -1,9 +1,9 @@
-import { QueryClient, useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createTodo } from "./apis";
 import { Todo } from "../getTodo/type";
 
 export const useCreateTodo = () => {
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data: Todo) => createTodo(data),
     onMutate: () => {
@@ -20,7 +20,6 @@ export const useCreateTodo = () => {
         console.log("hey this is error:", error);
       } else {
         await queryClient.invalidateQueries({ queryKey: ["gettodos"] });
-        console.log("we do right");
       }
     },
   });

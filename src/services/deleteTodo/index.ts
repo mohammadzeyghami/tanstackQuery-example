@@ -1,8 +1,8 @@
-import { QueryClient, useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import deleteTodo from "./api";
 
 export const useDeleteTodo = () => {
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => deleteTodo(id),
     onMutate: () => {

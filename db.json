@@ -2,12 +2,6 @@
   "todos": [
     {
       "title": "test",
-      "description": "test",
-      "id": "9",
-      "checked": false
-    },
-    {
-      "title": "test",
       "description": "",
       "id": "10",
       "checked": true
@@ -64,12 +58,6 @@
       "title": "new todo",
       "description": "new todo",
       "id": "20"
-    },
-    {
-      "id": "1",
-      "title": "title",
-      "description": "this is test",
-      "checked": false
     },
     {
       "id": "1",
@@ -301,6 +289,18 @@
     },
     {
       "id": "1",
+      "title": "test4",
+      "description": "this is test",
+      "checked": false
+    },
+    {
+      "id": 1,
+      "title": "test4",
+      "description": "this is test",
+      "checked": false
+    },
+    {
+      "id": 1,
       "title": "test4",
       "description": "this is test",
       "checked": false
