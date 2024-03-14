@@ -6,8 +6,11 @@ import { ButtonMain, MainDashLayout } from "../../molecules";
 const PageInfinity = () => {
   const { data, isFetchingNextPage, hasNextPage, fetchNextPage } =
     useProducts();
+
+  // const {} = useProduct();
   const [selectedProdutId, setSelectedProdutId] = useState<string | null>(null);
   console.log(data);
+  console.log();
   return (
     <MainDashLayout>
       <H1 className="text-center">Infinity</H1>
@@ -18,13 +21,16 @@ const PageInfinity = () => {
       })}
       <ButtonMain
         onClick={() => fetchNextPage()}
-        disabled={isFetchingNextPage || !hasNextPage}
+        disabled={
+          isFetchingNextPage ||
+          data?.pages?.[data?.pages.length - 1]?.next === null
+        }
       >
         {isFetchingNextPage
           ? "fetching ..."
           : hasNextPage
           ? "load more"
-          : "..."}
+          : "nothing to load"}
       </ButtonMain>
     </MainDashLayout>
   );
