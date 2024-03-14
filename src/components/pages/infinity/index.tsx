@@ -1,15 +1,33 @@
-import { H1, View } from "../..";
+import { useState } from "react";
+import { H1 } from "../..";
+import { useProducts } from "../../../services/getInfinityProducts";
 import { ButtonMain, MainDashLayout } from "../../molecules";
 
-const Pageinfinity = () => {
+const PageInfinity = () => {
+  const { data, isFetchingNextPage, hasNextPage, fetchNextPage } =
+    useProducts();
+  const [selectedProdutId, setSelectedProdutId] = useState<string | null>(null);
+  console.log(data);
   return (
     <MainDashLayout>
       <H1 className="text-center">Infinity</H1>
-      <View className="w-full pt-2 justify-between px-2">
-        <ButtonMain onClick={() => console.log("log")}>GetQuery</ButtonMain>
-      </View>
+      {data?.pages?.map((group) => {
+        return group?.data.map((product: { name: string; id: number }) => (
+          <ButtonMain id={`${product.id}`}>{product.name}</ButtonMain>
+        ));
+      })}
+      <ButtonMain
+        onClick={() => fetchNextPage()}
+        disabled={isFetchingNextPage || !hasNextPage}
+      >
+        {isFetchingNextPage
+          ? "fetching ..."
+          : hasNextPage
+          ? "load more"
+          : "..."}
+      </ButtonMain>
     </MainDashLayout>
   );
 };
 
-export default Pageinfinity;
+export default PageInfinity;

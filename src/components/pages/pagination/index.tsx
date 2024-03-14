@@ -18,7 +18,7 @@ const PagePagination = () => {
       ) : isError ? (
         <P>{error.message || "error"}</P>
       ) : (
-        data?.data?.map((item) => {
+        data?.data?.map((item: { id: number; name: string }) => {
           return (
             <div className="bg-gray" key={item.id}>
               <P className="!text-black">{item?.name}</P>

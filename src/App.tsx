@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes as Router } from "react-router-dom";
 
 import PageCrud from "./components/pages/crud";
 import PagePagination from "./components/pages/pagination";
-import Pageinfinity from "./components/pages/infinity";
+import PageInfinity from "./components/pages/infinity";
 import PageHome from "./components/pages/home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -19,7 +19,7 @@ function App() {
           <Route path={"*"} element={<PageHome />} />
           <Route path={"/crud"} element={<PageCrud />} />
           <Route path={"/pagination"} element={<PagePagination />} />
-          <Route path={"/infinity"} element={<Pageinfinity />} />
+          <Route path={"/infinity"} element={<PageInfinity />} />
         </Router>
       </BrowserRouter>
     </QueryClientProvider>
