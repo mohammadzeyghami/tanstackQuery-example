@@ -10,13 +10,13 @@ export interface MainDashProps {
 }
 
 const MainDashLayout = ({
-  footer,
+  // footer,
   children,
   sidebar,
   header,
   rightBar,
 }: MainDashProps) => {
-  const { Sider, Header, Footer } = Layout;
+  const { Sider, Header } = Layout;
   return (
     <Layout>
       <Sider className=" !bg-white min-h-[100vh] fixed p-4 z-10 ">
@@ -30,7 +30,7 @@ const MainDashLayout = ({
         <Content className="w-full flex-1 min-h-[calc(100vh-120px)] mt-[60px] ">
           <Suspense fallback={<div>Loading ... </div>}>{children}</Suspense>
         </Content>
-        <Footer className="w-full flex-1">{footer}</Footer>
+        {/* <Footer className="w-full flex-1">{footer}</Footer> */}
       </Layout>
       <Sider className=" !bg-white min-h-[100vh] fixed p-4 z-10">
         {rightBar}
