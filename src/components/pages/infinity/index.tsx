@@ -3,6 +3,7 @@ import { H1, P } from "../..";
 import { useProducts } from "../../../services/getInfinityProducts";
 import { ButtonMain, MainDashLayout } from "../../molecules";
 import { useProduct } from "../../../services/getProduct";
+import { NavbarMain } from "../../sections/navbar/main";
 
 const PageInfinity = () => {
   const [selectedProdutId, setSelectedProdutId] = useState<number | null>(null);
@@ -12,7 +13,7 @@ const PageInfinity = () => {
   console.log(data);
   console.log();
   return (
-    <MainDashLayout>
+    <MainDashLayout header={<NavbarMain />}>
       <H1 className="text-center">Infinity</H1>
       {data?.pages?.map((group) => {
         return group?.data.map((product: { name: string; id: number }) => (

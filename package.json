@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.27.3",
+    "animate.css": "^4.1.1",
     "antd": "^5.15.2",
     "axios": "^1.6.7",
     "json-server": "^1.0.0-alpha.23",

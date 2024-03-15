@@ -9,7 +9,7 @@ import PagePagination from "./components/pages/pagination";
 import PageInfinity from "./components/pages/infinity";
 import PageHome from "./components/pages/home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import "animate.css";
 function App() {
   const queryClient = new QueryClient();
   return (

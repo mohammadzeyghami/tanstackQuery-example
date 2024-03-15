@@ -2,6 +2,7 @@ import { ButtonMain, MainDashLayout } from "../../molecules";
 import { H1, H3, P } from "../..";
 import { useGetProjects } from "../../../services/getProjects";
 import { useState } from "react";
+import { NavbarMain } from "../../sections/navbar/main";
 
 const PagePagination = () => {
   const [page, setPage] = useState(1);
@@ -10,7 +11,7 @@ const PagePagination = () => {
   );
   console.log(data);
   return (
-    <MainDashLayout>
+    <MainDashLayout header={<NavbarMain />}>
       <H1 className="text-center">pagination </H1>
       <H3 className="text-center">{page}</H3>
       {isPending ? (
