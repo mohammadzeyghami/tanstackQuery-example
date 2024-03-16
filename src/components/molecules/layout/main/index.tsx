@@ -23,7 +23,7 @@ const MainDashLayout = ({
         {sidebar}
       </Sider>
       <Layout>
-        <Header className="bg-inherit w-[calc(100vw-360px)] fixed z-10 mx-auto p-4 ">
+        <Header className="bg-inherit w-[calc(100vw-420px)] fixed z-10 mx-auto p-4 ">
           {" "}
           {header}
         </Header>

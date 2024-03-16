@@ -4,7 +4,7 @@ const ButtonMain = ({ className, ...rest }: ButtonProps) => {
   return (
     <AntButton
       className={twMerge(
-        "!bg-blue-400 text-white hover:!text-white",
+        "!bg-red-500 !border-red-500 text-white hover:!text-white disabled:!text-white disabled:!bg-gray-600 disabled:!border-none",
         className
       )}
       {...rest}

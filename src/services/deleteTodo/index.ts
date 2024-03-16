@@ -4,7 +4,7 @@ import deleteTodo from "./api";
 export const useDeleteTodo = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (id: number) => deleteTodo(id),
+    mutationFn: (id: number | string) => deleteTodo(id),
     onMutate: () => {
       console.log("mutate");
     },

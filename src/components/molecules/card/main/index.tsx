@@ -1,4 +1,3 @@
-import React from "react";
 import { H4, P, View } from "../../..";
 
 const CardMain = ({

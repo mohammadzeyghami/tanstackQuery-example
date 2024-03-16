@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { H1, P } from "../..";
+import { H1, H4, P, View } from "../..";
 import { useProducts } from "../../../services/getInfinityProducts";
 import { ButtonMain, MainDashLayout } from "../../molecules";
 import { useProduct } from "../../../services/getProduct";
@@ -15,30 +15,37 @@ const PageInfinity = () => {
   return (
     <MainDashLayout header={<NavbarMain />}>
       <H1 className="text-center">Infinity</H1>
-      {data?.pages?.map((group) => {
-        return group?.data.map((product: { name: string; id: number }) => (
+      <View className="flex-wrap gap-2 pb-4 justify-center pt-4">
+        {data?.pages?.map((group) => {
+          return group?.data.map((product: { name: string; id: number }) => (
+            <ButtonMain
+              id={`${product.id}`}
+              onClick={() => setSelectedProdutId(product.id)}
+            >
+              {product.name}
+            </ButtonMain>
+          ));
+        })}
+      </View>
+      <View vertical>
+        <View className="justify-center">
           <ButtonMain
-            id={`${product.id}`}
-            onClick={() => setSelectedProdutId(product.id)}
+            onClick={() => fetchNextPage()}
+            className=""
+            disabled={
+              isFetchingNextPage ||
+              data?.pages?.[data?.pages.length - 1]?.next === null
+            }
           >
-            {product.name}
+            {isFetchingNextPage
+              ? "fetching ..."
+              : hasNextPage
+              ? "load more"
+              : "nothing to load"}
           </ButtonMain>
-        ));
-      })}
-      <ButtonMain
-        onClick={() => fetchNextPage()}
-        disabled={
-          isFetchingNextPage ||
-          data?.pages?.[data?.pages.length - 1]?.next === null
-        }
-      >
-        {isFetchingNextPage
-          ? "fetching ..."
-          : hasNextPage
-          ? "load more"
-          : "nothing to load"}
-      </ButtonMain>
-      <P>{JSON.stringify(selectedData)}</P>
+        </View>
+        <H4 className="text-center">{JSON.stringify(selectedData)}</H4>
+      </View>
     </MainDashLayout>
   );
 };

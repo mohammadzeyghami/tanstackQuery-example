@@ -1,7 +1,6 @@
-import axios from "axios";
 import { axiosInstance } from "../apis";
 
-async function deleteTodo(todoId: number): Promise<void> {
+async function deleteTodo(todoId: number | string): Promise<void> {
   try {
     const response = await axiosInstance.delete(`todos/${todoId}`);
     console.log("Todo deleted successfully:", response.data);
