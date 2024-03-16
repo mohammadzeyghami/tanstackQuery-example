@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { H1, H4, P, View } from "../..";
+import { H1, H4, View } from "../..";
 import { useProducts } from "../../../services/getInfinityProducts";
 import { ButtonMain, MainDashLayout } from "../../molecules";
 import { useProduct } from "../../../services/getProduct";
@@ -14,8 +14,10 @@ const PageInfinity = () => {
   console.log();
   return (
     <MainDashLayout header={<NavbarMain />}>
-      <H1 className="text-center">Infinity</H1>
-      <View className="flex-wrap gap-2 pb-4 justify-center pt-4">
+      <H1 className="text-center animate__animated animate__fadeIn">
+        Infinity
+      </H1>
+      <View className="flex-wrap gap-2 pb-4 justify-center pt-4 animate__animated animate__fadeIn">
         {data?.pages?.map((group) => {
           return group?.data.map((product: { name: string; id: number }) => (
             <ButtonMain
@@ -27,7 +29,7 @@ const PageInfinity = () => {
           ));
         })}
       </View>
-      <View vertical>
+      <View vertical className="animate__animated animate__fadeIn">
         <View className="justify-center">
           <ButtonMain
             onClick={() => fetchNextPage()}

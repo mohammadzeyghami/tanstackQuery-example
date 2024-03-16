@@ -34,7 +34,7 @@ const PageCrud = () => {
   };
   return (
     <MainDashLayout header={<NavbarMain />}>
-      <div className="flex flex-col gap-3 mt-3 w-full max-w-[600px] mx-auto">
+      <div className="flex flex-col gap-3 animate__animated animate__fadeIn mt-3 w-full max-w-[600px] mx-auto">
         {data?.map((item, index) => {
           return (
             <div className="gap-2 flex justify-center" key={index}>

@@ -12,10 +12,12 @@ const PagePagination = () => {
   console.log(data);
   return (
     <MainDashLayout header={<NavbarMain />}>
-      <H1 className="text-center">pagination </H1>
+      <H1 className="text-center animate__animated animate__fadeIn">
+        pagination{" "}
+      </H1>
       <View
         vertical
-        className=" border-[1px] shadow-md max-w-[600px] mx-auto my-8 rounded-lg py-5"
+        className=" border-[1px] animate__animated animate__fadeIn shadow-md max-w-[600px] mx-auto my-8 rounded-lg py-5"
       >
         <H3 className="text-center !text-red-500 !mb-4">{page}</H3>
         {isPending ? (
