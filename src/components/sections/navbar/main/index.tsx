@@ -54,7 +54,7 @@ const NavbarMain = () => {
         </Link>
       </View>
       <Link to={"/"}>
-        <H5 className="!text-red-500 !font-bold">React Query Example</H5>
+        <H5 className="!text-red-500 !font-bold">TanstackQuery-Example</H5>
       </Link>
     </View>
   );

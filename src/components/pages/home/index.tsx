@@ -10,10 +10,9 @@ const PageHome = () => {
       <View vertical className="px-2">
         <H4 className="text-center">Home</H4>
         <View className="flex-wrap gap-2 mx-auto pt-4">
-          <CardMain description="description" title={"infinity"} />
-          <CardMain description="description" title={"infinity"} />
-          <CardMain description="description" title={"infinity"} />
-          <CardMain description="description" title={"infinity"} />
+          <CardMain title={"crud"} />
+          <CardMain title={"pagination"} />
+          <CardMain title={"infinity"} />
         </View>
       </View>
     </MainDashLayout>
