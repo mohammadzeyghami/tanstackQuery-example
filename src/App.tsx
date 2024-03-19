@@ -10,6 +10,7 @@ import PageInfinity from "./components/pages/infinity";
 import PageHome from "./components/pages/home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "animate.css";
+import PageInfinityLoad from "./components/pages/infinityLoad";
 function App() {
   const queryClient = new QueryClient();
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path={"/crud"} element={<PageCrud />} />
           <Route path={"/pagination"} element={<PagePagination />} />
           <Route path={"/infinity"} element={<PageInfinity />} />
+          <Route path={"/infinity-load"} element={<PageInfinityLoad />} />
         </Router>
       </BrowserRouter>
     </QueryClientProvider>

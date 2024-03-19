@@ -13,6 +13,7 @@ const PageHome = () => {
           <CardMain title={"crud"} />
           <CardMain title={"pagination"} />
           <CardMain title={"infinity"} />
+          <CardMain title={"infinity-load"} />
         </View>
       </View>
     </MainDashLayout>

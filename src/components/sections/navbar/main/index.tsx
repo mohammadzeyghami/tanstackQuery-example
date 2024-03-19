@@ -52,6 +52,17 @@ const NavbarMain = () => {
             Infinity
           </H5>
         </Link>
+        <Link to="/infinity-load">
+          <H5
+            className={twMerge(
+              useActivelocation({ target: "infinity-load", isWrapper: true })
+                ? "!text-red-500"
+                : "text-black"
+            )}
+          >
+            InfinityLoad
+          </H5>
+        </Link>
       </View>
       <Link to={"/"}>
         <H5 className="!text-red-500 !font-bold">TanstackQuery-Example</H5>
